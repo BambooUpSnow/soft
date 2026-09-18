@@ -1,0 +1,61 @@
+yaml
+name: 打包APK
+
+# 什么时候自动编译：
+#  1) 网页上点按钮手动跑（Actions → 打包APK → Run workflow）
+#  2) 往 main / master 分支推代码的时候自动跑
+#  3) 打 v1.0.0 这种 tag 的时候，顺便把 APK 挂到 Release 页面
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: 1. 把仓库代码拉到编译机上
+        uses: actions/checkout@v4
+
+      - name: 2. 装 JDK 17（AGP 8.x 需要）
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: 3. 装 Gradle 8.7
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          # 仓库里只有 gradle-wrapper.properties（wrapper 的 jar 是二进制文件，
+          # 没有本地 Gradle 生成不了），所以这里直接用 GitHub 上的 gradle 命令编译。
+          gradle-version: '8.7'
+
+      - name: 4. 编译 Release APK
+        run: gradle assembleRelease --no-daemon --stacktrace
+
+      - name: 5. 编译 Debug APK（备用，装不上时用这个）
+        run: gradle assembleDebug --no-daemon --stacktrace
+
+      - name: 6. 打包 APK 供下载
+        uses: actions/upload-artifact@v4
+        with:
+          name: SignLanguageApp-APK
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            app/build/outputs/apk/release/*.apk
+            app/build/outputs/apk/debug/*.apk
+
+      - name: 7. 如果推送的是 tag，把 APK 挂到 Release 页面
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            app/build/outputs/apk/release/*.apk
+            app/build/outputs/apk/debug/*.apk

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#F2F4F8</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="on_surface">#1B1B1F</color>
+    <color name="on_surface_variant">#5A5D66</color>
+    <color name="outline">#DDE1E9</color>
+
+    <color name="brand">#1E5EFF</color>
+    <color name="brand_dark">#0B3BC4</color>
+    <color name="brand_soft">#E8EFFF</color>
+    <color name="brand_container">#D6E2FF</color>
+    <color name="on_brand_container">#00174B</color>
+
+    <color name="heart">#E53935</color>
+    <color name="heart_soft">#FFEBEE</color>
+    <color name="spo2">#0F9D9D</color>
+    <color name="spo2_soft">#E0F5F5</color>
+    <color name="ok">#2E7D32</color>
+
+    <color name="ic_launcher_background">#1E5EFF</color>
+</resources>

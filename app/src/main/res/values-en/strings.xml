@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sign Language</string>
+
+    <string name="tab_monitor">Live</string>
+    <string name="tab_history">History</string>
+    <string name="tab_settings">Settings</string>
+
+    <string name="title_monitor">Live monitor</string>
+    <string name="state_idle">Not connected</string>
+    <string name="state_connecting">Connecting…</string>
+    <string name="state_connected">Connected</string>
+    <string name="state_demo">Demo mode</string>
+    <string name="btn_pick_device">Pick device</string>
+    <string name="device_not_selected">No device selected</string>
+    <string name="demo_device">Demo device</string>
+    <string name="btn_disconnect">Disconnect</string>
+    <string name="card_gesture">Gesture</string>
+    <string name="gesture_empty">Waiting…</string>
+    <string name="gesture_hint">Recognized gestures appear here automatically</string>
+    <string name="btn_replay_voice">Speak again</string>
+    <string name="card_vitals">Heart rate / SpO2</string>
+    <string name="label_hr">Heart rate</string>
+    <string name="label_spo2">SpO2</string>
+    <string name="unit_bpm">bpm</string>
+    <string name="unit_percent">%</string>
+    <string name="value_placeholder">--</string>
+    <string name="btn_refresh_vitals">Refresh</string>
+    <string name="vitals_stale">Data is stale, tap refresh</string>
+    <string name="vitals_no_data">No data yet (place a finger on the MAX30102)</string>
+    <string name="vitals_no_record">No vitals recorded</string>
+    <string name="vitals_updated">Updated: %1$s</string>
+    <string name="volume_percent">%1$d%%</string>
+    <string name="card_volume">Speech volume</string>
+    <string name="label_volume">Media volume</string>
+    <string name="switch_auto_read">Speak new gestures automatically</string>
+    <string name="tts_not_ready">Speech engine not ready</string>
+
+    <string name="title_history">History</string>
+    <string name="history_count_empty">No records</string>
+    <string name="history_count">%1$d records</string>
+    <string name="btn_export">Export CSV</string>
+    <string name="btn_clear">Clear</string>
+    <string name="dialog_clear_title">Clear history</string>
+    <string name="dialog_clear_msg">Delete all %1$d records? This cannot be undone.</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_speak">Speak</string>
+    <string name="action_copy">Copy text</string>
+    <string name="history_empty_hint">No records yet. Connect the device and make a gesture.</string>
+    <string name="toast_copied">Copied</string>
+    <string name="export_subject">Gesture history</string>
+    <string name="export_chooser">Export history</string>
+    <string name="toast_export_failed">Export failed: %1$s</string>
+
+    <string name="title_settings">Settings</string>
+    <string name="card_tts">Speech</string>
+    <string name="label_speech_rate">Speed</string>
+    <string name="rate_value">%1$.1f×</string>
+    <string name="seconds_value">%1$d s</string>
+    <string name="tts_test_text">Hello, this is the sign language assistant</string>
+    <string name="btn_test_speak">Test</string>
+    <string name="label_tts_engine">Engine</string>
+    <string name="tts_engine_default">System default</string>
+    <string name="tts_no_engine">No speech engine available. Install text-to-speech data in system settings.</string>
+    <string name="switch_auto_read_long">Speak automatically on new gestures</string>
+    <string name="card_conn">Bluetooth</string>
+    <string name="switch_auto_reconnect">Auto reconnect</string>
+    <string name="switch_poll_vitals">Poll heart rate / SpO2</string>
+    <string name="label_poll_interval">Interval (seconds)</string>
+    <string name="btn_connect_last">Connect last device</string>
+    <string name="label_last_device">Last device: %1$s</string>
+    <string name="label_last_device_none">Last device: none</string>
+    <string name="card_advanced">Advanced / debug</string>
+    <string name="switch_demo">Demo mode (simulate data, no hardware)</string>
+    <string name="switch_log">Show communication log</string>
+    <string name="switch_utf8">Decode as UTF-8 (default GB2312)</string>
+    <string name="toast_utf8_on">Switched to UTF-8 (reconnect to apply)</string>
+    <string name="toast_gb2312_on">Switched to GB2312 (matches current firmware)</string>
+    <string name="label_custom_cmd">Custom command</string>
+    <string name="hint_custom_cmd">e.g. HR? or PLAY0011</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_send_hr">Send HR?</string>
+    <string name="btn_send_play">Send PLAY0011</string>
+    <string name="label_log">Log</string>
+    <string name="log_empty_hint">(no log)</string>
+    <string name="btn_clear_log">Clear log</string>
+    <string name="notif_channel_name">Bluetooth</string>
+
+    <string name="dialog_pick_device">Pick Bluetooth device</string>
+    <string name="btn_scan">Scan</string>
+    <string name="device_bonded">Paired</string>
+    <string name="device_found">Found</string>
+    <string name="no_device_yet">No devices. Scan, or pair the HC-05 in system Bluetooth settings.</string>
+
+    <string name="toast_hr_requested">Requested heart rate / SpO2</string>
+    <string name="toast_tts_not_ready">Speech engine not ready. Check Chinese voice data.</string>
+    <string name="toast_need_bt_permission">Bluetooth permission is required</string>
+    <string name="msg_perm_ok">Bluetooth permission granted</string>
+    <string name="toast_sent">Sent: %1$s</string>
+    <string name="about_version">Sign Language v1.0.0 · for STM32 + HC-05 + MAX30102 + JR6001</string>
+</resources>

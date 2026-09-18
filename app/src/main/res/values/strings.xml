@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">手语助手</string>
+
+    <string name="tab_monitor">实时</string>
+    <string name="tab_history">记录</string>
+    <string name="tab_settings">设置</string>
+
+    <!-- 实时监测 -->
+    <string name="title_monitor">实时监测</string>
+    <string name="state_idle">未连接</string>
+    <string name="state_demo">演示模式</string>
+    <string name="state_connecting">连接中…</string>
+    <string name="state_connected">已连接</string>
+    <string name="btn_pick_device">选择设备</string>
+    <string name="device_not_selected">未选择设备</string>
+    <string name="demo_device">演示设备</string>
+    <string name="btn_disconnect">断开</string>
+    <string name="card_gesture">手势识别</string>
+    <string name="gesture_empty">等待识别…</string>
+    <string name="gesture_hint">手语相机识别到手势后会自动显示在这里</string>
+    <string name="btn_replay_voice">再读一遍</string>
+    <string name="card_vitals">心率 / 血氧</string>
+    <string name="label_hr">心率</string>
+    <string name="label_spo2">血氧</string>
+    <string name="unit_bpm">bpm</string>
+    <string name="unit_percent">%</string>
+    <string name="value_placeholder">--</string>
+    <string name="btn_refresh_vitals">刷新数据</string>
+    <string name="vitals_stale">数据已过期，点击刷新</string>
+    <string name="vitals_no_data">尚未收到心率/血氧数据（需把手指放到 MAX30102 上）</string>
+    <string name="vitals_no_record">当时无心率/血氧数据</string>
+    <string name="vitals_updated">最后更新：%1$s</string>
+    <string name="volume_percent">%1$d%%</string>
+    <string name="card_volume">朗读音量</string>
+    <string name="label_volume">媒体音量</string>
+    <string name="switch_auto_read">新手势自动朗读</string>
+    <string name="tts_not_ready">语音引擎未就绪</string>
+
+    <!-- 历史记录 -->
+    <string name="title_history">历史记录</string>
+    <string name="history_count_empty">暂无记录</string>
+    <string name="history_count">共 %1$d 条记录</string>
+    <string name="btn_export">导出CSV</string>
+    <string name="btn_clear">清空</string>
+    <string name="dialog_clear_title">清空历史记录</string>
+    <string name="dialog_clear_msg">将删除全部 %1$d 条记录，无法恢复。确定吗？</string>
+    <string name="action_clear">清空</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_delete">删除这条</string>
+    <string name="action_speak">朗读</string>
+    <string name="action_copy">复制文字</string>
+    <string name="history_empty_hint">还没有识别记录。连接手环并做出手势后，记录会自动出现在这里。</string>
+    <string name="toast_copied">已复制</string>
+    <string name="export_subject">手语识别历史记录</string>
+    <string name="export_chooser">导出历史记录</string>
+    <string name="toast_export_failed">导出失败：%1$s</string>
+
+    <!-- 设置 -->
+    <string name="title_settings">设置</string>
+    <string name="card_tts">朗读设置</string>
+    <string name="label_speech_rate">语速</string>
+    <string name="btn_test_speak">试听</string>
+    <string name="label_tts_engine">语音引擎</string>
+    <string name="tts_engine_default">系统默认</string>
+    <string name="tts_no_engine">没有可用的语音引擎，请先在系统设置里安装文字转语音数据</string>
+    <string name="rate_value">%1$.1f 倍</string>
+    <string name="seconds_value">%1$d 秒</string>
+    <string name="tts_test_text">你好，我是手语助手，现在开始朗读手势</string>
+    <string name="toast_utf8_on">已切换为 UTF-8 解码（需重新连接生效）</string>
+    <string name="toast_gb2312_on">已切换为 GB2312 解码（与当前固件一致）</string>
+    <string name="notif_channel_name">蓝牙连接</string>
+    <string name="log_empty_hint">（暂无日志）</string>
+    <string name="switch_auto_read_long">识别到新手势时自动朗读</string>
+    <string name="card_conn">蓝牙连接</string>
+    <string name="switch_auto_reconnect">断线自动重连</string>
+    <string name="switch_poll_vitals">定时查询心率血氧</string>
+    <string name="label_poll_interval">查询间隔（秒）</string>
+    <string name="btn_connect_last">连接上次设备</string>
+    <string name="label_last_device">上次设备：%1$s</string>
+    <string name="label_last_device_none">上次设备：无</string>
+    <string name="card_advanced">高级 / 调试</string>
+    <string name="switch_demo">演示模式（无硬件时模拟数据）</string>
+    <string name="switch_log">显示通信日志</string>
+    <string name="switch_utf8">按 UTF-8 解码（默认 GB2312）</string>
+    <string name="label_custom_cmd">自定义指令</string>
+    <string name="hint_custom_cmd">例如 HR? 或 PLAY0011</string>
+    <string name="btn_send">发送</string>
+    <string name="btn_send_hr">发 HR?</string>
+    <string name="btn_send_play">发 PLAY0011</string>
+    <string name="label_log">通信日志</string>
+    <string name="btn_clear_log">清日志</string>
+
+    <!-- 选择设备 -->
+    <string name="dialog_pick_device">选择蓝牙设备</string>
+    <string name="btn_scan">扫描新设备</string>
+    <string name="device_bonded">已配对</string>
+    <string name="device_found">已发现</string>
+    <string name="no_device_yet">还没有设备。请先扫描，或在手机蓝牙设置里把 HC-05 配对。</string>
+
+    <!-- 提示 -->
+    <string name="toast_hr_requested">已请求心率血氧</string>
+    <string name="toast_tts_not_ready">语音引擎未就绪，请检查手机是否安装中文语音包</string>
+    <string name="toast_need_bt_permission">需要蓝牙权限才能连接手环</string>
+    <string name="msg_perm_ok">蓝牙权限已就绪</string>
+    <string name="toast_sent">已发送：%1$s</string>
+    <string name="about_version">手语助手 v1.0.0 · 适配 STM32 + HC-05 + MAX30102 + JR6001</string>
+</resources>

@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.signlanguage.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.signlanguage.app"
+        // 你的目标机型是 Android 12+（API 31）
+        minSdk 31
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+        // 只保留中文资源，减小体积
+        resConfigs "zh", "en"
+    }
+
+    // 如果你在 app/ 目录放了自己的 release.keystore，就会用它签名；
+    // 没有的话，AGP 会让 release 复用 Android 默认的 debug 签名。
+    // 这样 GitHub Actions 上不需要配置任何密钥也能直接出可安装的 APK。
+    signingConfigs {
+        release {
+            def ks = file('release.keystore')
+            if (ks.exists()) {
+                storeFile ks
+                storePassword System.getenv('KEYSTORE_PASSWORD') ?: 'android'
+                keyAlias System.getenv('KEY_ALIAS') ?: 'signlanguage'
+                keyPassword System.getenv('KEY_PASSWORD') ?: 'android'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            if (file('release.keystore').exists()) {
+                signingConfig signingConfigs.release
+            }
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        viewBinding false
+    }
+
+    packaging {
+        resources {
+            excludes += ['META-INF/*.kotlin_module']
+        }
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.fragment:fragment:1.6.2'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.11.0'
+}
